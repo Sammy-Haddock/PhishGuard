@@ -16,13 +16,24 @@
             <h1>Welcome to PhishGuard</h1>
             <p>Your trusted tool for detecting phishing emails.</p>
         </div>
-        <div2 class="container2">
+        <div class="container2">
             <h2>URL Phishing Checker</h2>
             <input type="text" id="urlInput" placeholder="Enter URL here...">
             <button onclick="checkURL()">Check URL</button>
             <p id="result"></p>
-        </div2>
+        </div>
     </main>
+
+    <!-- Google Sign-In Modal -->
+    <div id="googleSignInModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Sign in with Google</h2>
+            <p>Please sign in to your Google account to continue.</p>
+            <button onclick="signInWithGoogle()">Sign in with Google</button>
+        </div>
+    </div>
+
     <script>
         async function checkURL() {
             const url = document.getElementById('urlInput').value;
@@ -35,6 +46,27 @@
             });
             const result = await response.json();
             document.getElementById('result').innerText = `Result: ${result.status}`;
+        }
+
+        // Function to open the modal
+        function openModal() {
+            document.getElementById('googleSignInModal').style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById('googleSignInModal').style.display = 'none';
+        }
+
+        // Function to handle Google Sign-In
+        function signInWithGoogle() {
+            // Implement Google Sign-In logic here
+            alert('Google Sign-In functionality to be implemented.');
+        }
+
+        // Open the modal when the page loads
+        window.onload = function() {
+            openModal();
         }
     </script>
 </body>

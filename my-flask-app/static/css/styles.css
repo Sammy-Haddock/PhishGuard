@@ -13,6 +13,24 @@ nav {
     text-align: center;
     font-size: 1.5em;
     font-weight: 600;
+    position: relative;
+}
+
+nav button {
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    transform: translateY(-50%);
+    padding: 0.5em 1em;
+    font-size: 1em;
+    background-color: white;
+    color: navy;
+    border: none;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: lightgray;
 }
 
 h1, p {
@@ -26,7 +44,7 @@ h1, p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 250px;
+    height: 300px;
 }
 
 .container2 {
@@ -34,7 +52,7 @@ h1, p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 500px;
+    height: 200px;
 }
 
 input[type="text"] {
@@ -99,4 +117,20 @@ button:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Style for the button to open the modal again */
+#openModalButton {
+    display: block;
+    margin: auto;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    background-color: white;
+    color: navy;
+    border: none;
+    cursor: pointer;
+}
+
+#openModalButton:hover {
+    background-color: lightgray;
 }

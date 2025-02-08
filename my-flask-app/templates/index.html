@@ -11,7 +11,7 @@
 
 <body>
     <nav>
-        PhishGuard
+        <span id="phishGuardTitle" onclick="openGifModal()">PhishGuard</span>
         <button id="openModalButton" onclick="openModal()">Sign In</button>
     </nav>
     <main>
@@ -28,7 +28,7 @@
         <div class="container3">
             <h2>Phishing Email Detector</h2>
             <input type="text" id="urlInput" placeholder="Enter text here...">
-            <button onclick="checkURL()">Check text</button> // create function checkText
+            <button onclick="checkURL()">Check text</button> <!-- create function checkText -->
             <p id="result"></p>
         </div>
     </main>
@@ -42,6 +42,16 @@
             <button onclick="signInWithGoogle()">Sign in with Google</button>
         </div>
     </div>
+
+    <!-- GIF Modal -->
+    <div id="gifModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeGifModal()">&times;</span>
+            <img id="gifImage">
+            <div class="tenor-gif-embed" data-postid="13847119319931384163" data-share-method="host" data-aspect-ratio="1.77857" data-width="95%"><a href="https://tenor.com/view/spinning-fish-gif-13847119319931384163">Spinning Fish GIF</a>from <a href="https://tenor.com/search/spinning-gifs">Spinning GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        </div>
+    </div>
+
 
     <script>
         async function checkURL() {
@@ -57,12 +67,12 @@
             document.getElementById('result').innerText = `Result: ${result.status}`;
         }
 
-        // Function to open the modal
+        // Function to open the Google Sign-In modal
         function openModal() {
             document.getElementById('googleSignInModal').style.display = 'block';
         }
 
-        // Function to close the modal
+        // Function to close the Google Sign-In modal
         function closeModal() {
             document.getElementById('googleSignInModal').style.display = 'none';
         }
@@ -73,7 +83,18 @@
             alert('Google Sign-In functionality to be implemented.');
         }
 
-        // Open the modal when the page loads
+        // Function to open the GIF modal
+        function openGifModal() {
+            const gifImage = document.getElementById('gifImage');
+            document.getElementById('gifModal').style.display = 'block';
+        }
+
+        // Function to close the GIF modal
+        function closeGifModal() {
+            document.getElementById('gifModal').style.display = 'none';
+        }
+
+        // Open the Google Sign-In modal when the page loads
         window.onload = function() {
             openModal();
         }

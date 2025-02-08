@@ -31,3 +31,32 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+nav {
+    background-color: #383434;
+    overflow: hidden;
+    text-align: center; /* Center the nav content */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block; /* Make the ul inline-block to center it */
+}
+
+nav li {
+    display: inline; /* Display list items inline */
+}
+
+nav ul li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #111;
+}
